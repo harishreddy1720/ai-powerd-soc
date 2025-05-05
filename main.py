@@ -21,6 +21,8 @@ app.add_middleware(
 # === Database Setup ===
 conn = sqlite3.connect("soc_logs.db", check_same_thread=False)
 cursor = conn.cursor()
+
+# Create logs table if it doesn't exist
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS logs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -31,6 +33,8 @@ CREATE TABLE IF NOT EXISTS logs (
     flag TEXT
 )
 """)
+
+# Create anomalies table with 'anomaly' and 'score' columns
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS anomalies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -39,7 +43,8 @@ CREATE TABLE IF NOT EXISTS anomalies (
     duration REAL,
     protocol TEXT,
     flag TEXT,
-    score REAL
+    anomaly INTEGER,  -- Added 'anomaly' column
+    score REAL  -- Added 'score' column
 )
 """)
 conn.commit()
