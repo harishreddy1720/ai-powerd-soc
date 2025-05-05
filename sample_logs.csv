@@ -1,0 +1,6 @@
+src_bytes,dst_bytes,duration,protocol,flag
+123,456,0.2,TCP,SF
+80,2048,0.1,UDP,S0
+512,1024,0.5,TCP,SF
+1024,512,0.8,TCP,SF
+10,20,0.05,UDP,REJ
