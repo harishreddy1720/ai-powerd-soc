@@ -54,13 +54,13 @@ def send_alert_email(anomaly_count):
     msg = EmailMessage()
     msg.set_content(f"{anomaly_count} anomalies detected in recent upload.")
     msg["Subject"] = "[SOC Alert] Anomalies Detected"
-    msg["From"] = "harishreddyjaggari@gmail.com"
-    msg["To"] = "harishjaggari17@gmail.com"
+    msg["From"] = "sahasrar240@gmail.com"
+    msg["To"] = "sahasrar240@gmail.com"
 
     try:
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
             server.starttls()
-            server.login("harishreddyjaggari@gmail.com", "mgop zxrv zsxh xlcu")  # Use app password
+            server.login("sahasrar240@gmail.com", "svzz ycwm hxcu osvq")  # Use app password
             server.send_message(msg)
     except Exception as e:
         print("Failed to send email:", e)
